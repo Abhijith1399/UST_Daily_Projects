@@ -1,0 +1,28 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int stable,etable;
+    cout<<"start Table="<<endl;
+    cin>>stable;
+    cout<<"end Table="<<endl;
+    cin>>etable;
+    for( int i= 0;i<=10;i++)
+{
+      
+    for(int j=stable;j<=etable; j++)
+  
+    {
+        
+    
+            cout<<j<<"*"<<i<<"="<<(i*j)<<"\t";
+        
+        
+    }cout <<endl;
+    
+}
+
+    return 0;
+}
