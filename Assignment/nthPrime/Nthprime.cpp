@@ -2,30 +2,48 @@
 using namespace std;
 
 int digit(int);
-bool checkPrime(bool);
+bool checkPrime(int);
 
 int main()
 {
 	int num = 0;
-	digit(num);
+	return digit(num);
 }
 
 
 
 int digit(int num)
-{
-	int var1 = 0;
+{   
+	bool flag = true;
+	int rem, t;
+	int counter = 0;
 	cout << "enter the num:" << endl;
 	cin >> num;
-	while (num > 0)
+	for(int i=1;;i++)
 	{
-		{
-			int rem = num % 10;
-			cout << rem << endl;
-			num = num / 10;
-		}
 
-	}return num;
+		flag = true;
+		t = i;
+		while (t > 0)
+		{
+			rem = t % 10;
+			t = t / 10;
+			if (checkPrime(rem) == false) {
+				flag = false;
+				break;
+
+			}
+				
+		}
+		if (flag ==true)
+			counter++;
+		if (counter == num)
+		{
+			cout << i;
+			break;
+		}
+	}
+	return 0;
 }
 
 bool checkPrime(int val1)
@@ -41,7 +59,7 @@ bool checkPrime(int val1)
 			break;
 		}
 	}
-	if (flag == 1)
+	if (flag==true)
 		return false;
 	else
 		return true;
