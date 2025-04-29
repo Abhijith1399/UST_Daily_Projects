@@ -2,8 +2,8 @@
 #include<iostream>
 using namespace std;
 
-int getNumberOfDigits(int);
-int powerOfDigits(int, int);
+int digits(int);
+int power(int, int);
 
 int main()
 {
@@ -11,7 +11,7 @@ int main()
 	cout << "Enter the input: ";
 	cin >> num;
 	cout << endl;
-	if (num == powerOfDigits(num, getNumberOfDigits(num)))
+	if (num == power(num, digits(num)))
 		cout << "Armstrong Number";
 	else
 		cout << "Not an Armstrong Number";
@@ -20,7 +20,7 @@ int main()
 }
 
 
-int getNumberOfDigits(int num)
+int digits(int num)
 {
 	int count = 0;
 	for (;num > 0;num /= 10)
@@ -28,7 +28,7 @@ int getNumberOfDigits(int num)
 	return count;
 }
 
-int powerOfDigits(int num, int pow)
+int power(int num, int pow)
 {
 	int sum = 0, rem, product;
 	for (;num > 0;num /= 10)
