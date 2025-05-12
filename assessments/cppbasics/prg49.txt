@@ -1,4 +1,4 @@
-//49	Write a Program for Decimal Octal Conversion
+//48	Write a Program for Decimal binaryConversion
 
 #include<iostream>
 using namespace std;
@@ -9,17 +9,17 @@ int main()
     int num;
     cin>>num;
     int count=0;
-    int octal=0;
+    int binary=0;
     int digit=0;
     while(num>0)
     {
-        digit=num%8;
-        octal+= digit*pow(10, count);  count++;
-        num/=8;
+        digit=num%2;
+        binary+= digit*pow(10, count);  count++;
+        num/=2;
      
       
       
     }
-         cout<<octal;
+         cout<<binary;
     return 0;
 }

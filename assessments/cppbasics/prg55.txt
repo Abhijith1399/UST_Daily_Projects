@@ -1,16 +1,22 @@
-//55	Write a program in C++ that converts kilometers per hour to miles per hour.
+#include<iostream>
+//1 more basic
 
 
-#include <iostream>
+#include<cmath>
 using namespace std;
-#include <climits>
+int main()
+	{
 
-int main() {
-   
-   float kmh;
-   cin>>kmh;
-   float mph=1;
-   mph=kmh*0.621371;
-   cout<<mph;
-    return 0;
+	int A, R, T, P,C;
+	cout << "enter the principle" << endl;
+	cin >> P;
+	cout << "enter the rate" << endl;
+	cin >> R;
+	cout << "enter the time" << endl;
+	cin >> T;
+	A = P * (1 + R / 100) ^ T;
+	C = A - P;
+	cout << A << endl;
+	cout << "compont Intrest=" << C << endl;
+
 }

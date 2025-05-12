@@ -1,23 +1,25 @@
-//rtrim
+//49	Write a Program for Decimal Octal Conversion
 
 #include<iostream>
 using namespace std;
-#define max 100
-
+#include<math.h>
 int main()
 {
-    char ch[max];
-    int count=0;
-    int j=0;
-    cin.getline(ch, max);
-    for(int i=0;ch[i]!=' ';i++)
-    {
-        ch[j]=ch[i];
-        j++;
-    }
-    ch[j]='\0';
-    cout<<ch;
     
-
+    int num;
+    cin>>num;
+    int count=0;
+    int octal=0;
+    int digit=0;
+    while(num>0)
+    {
+        digit=num%8;
+        octal+= digit*pow(10, count);  count++;
+        num/=8;
+     
+      
+      
+    }
+         cout<<octal;
     return 0;
 }
