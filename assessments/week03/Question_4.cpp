@@ -1,43 +1,39 @@
-
 #include<iostream>
-using namespace std;
-
 #define MAX 100
-
+using namespace std;
+int Equlibrium(int[], int);
 
 int main()
 {
+	int arr1[MAX];
 	int n;
-	int arr[MAX];
-	int equli = 0;
-	int left = 0;
-	int Right=0;
-
-	cout << "Enter the size: ";     
+	cout << "enter the size" << endl;
 	cin >> n;
-    cout << "Enter the array elements: ";
-	for (int i = 0; i < n; ++i)
-		cin >> arr[i];
+	cout << "enter the numbers;" << endl;
+	for (int i = 0;i < n;i++)
+    cin >> arr1[i];
+	 cout<<Equlibrium(arr1, n);
+}
 
 
-	while (equli < n)
+int Equlibrium(int arr1[], int n)
+{
+	int sumright, sumleft;
+	for (int i = 0;i < n;i++)
 	{
-		for (int i = equli - 1; i >= 0; i--)
-			left += arr[i];
-
-		for (int j = equli+ 1;j < n;++j)
-			Right += arr[j];
-
-		if (left == Right)
-
+		sumleft = 0;
+       	for (int j = i - 1;j >= 0;j--)
 		{
-			cout << "Equilibrium Point: " << equli;
-			break;
-		}
-		else
-		{
-			equli++;
+			sumleft += arr1[j];
 		}
 
+		sumright = 0;
+		for (int k = i + 1;k < n;k++)
+		{
+			sumright += arr1[k];
+		}
+
+		if (sumleft == sumright)
+			return i;
 	}
 }
