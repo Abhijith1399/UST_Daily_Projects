@@ -1,12 +1,4 @@
-﻿(No subject)
-
-
-
-
-
-Abhijith Jose(UST, IN)
-​
-Gouri Sankar Mundanchery(UST, IN)
+﻿
 ​
 
 //Write a Program to Find the Maximum and Minimum of the Two Numbers Without Using the Comparison Operator
