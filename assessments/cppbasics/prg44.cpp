@@ -1,4 +1,4 @@
-// Online C++ compiler to run C++ program online
+
 #include <iostream>
 using namespace std;
 int main() {
@@ -6,5 +6,6 @@ int main() {
    max=0;
    max=~max;
    cout<<max;
+   return 0;
   
 }

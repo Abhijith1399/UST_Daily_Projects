@@ -1,6 +1,4 @@
 #include<iostream>
-  
-
 #define max 6
 using namespace std;
 

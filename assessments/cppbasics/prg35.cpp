@@ -3,6 +3,7 @@
 
 #include<iostream>
 using namespace std;
+#include<cstring>
 #define max 100
 int main()
 {    

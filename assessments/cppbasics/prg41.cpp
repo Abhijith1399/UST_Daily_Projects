@@ -10,7 +10,5 @@ int main()
     static int x=0;
   
   if(cout << x << " " && x++ < 10 && main()) 
-  {
-    }
   return 0;
 }

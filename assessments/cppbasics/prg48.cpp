@@ -1,23 +1,13 @@
-
-?
-
-//Write a Program to Swap the Values of Two Variables Without Using any Extra Variabl
-
-
-
 #include<iostream>
-using namespace  std;
+using namespace std;
 int main()
-{
-    int a, b;
-    cin >> a >> b;
+{    
+	int a = 10;
+	int b = 20;
 
-
-    a = a + b;
-    b = a - b;
-    a = a - b;
-    cout << a << " " << b;
-    return 0;
-
-
+	cout << "after swap" << endl;
+	a = a ^ b;
+	b = a ^ b;
+	a = a ^ b;
+	cout << a << "=" << b << endl;
 }
