@@ -21,7 +21,7 @@ int main()
 
 	strcat(s3, "Abhijith");
 	printf("\ns3: %s\n", s3);
-	strcpy(s3, "Abhi");
+	strcpy(s3, "Amol");
 	printf("\ns3: %s\n", s3);
 
 	for (int i = 0;i < 30;i++)
@@ -29,7 +29,7 @@ int main()
 
 	char str1[20], str2[20], str3[30];
 
-	strcat(strcat(strcpy(str1, "Abhi"), "jith"), "jose");
+	strcat(strcat(strcpy(str1, "Abhi"), "jith"), " jose");
 
 	printf("\nstr1: %s\n", str1);
 
