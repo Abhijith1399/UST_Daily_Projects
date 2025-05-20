@@ -14,13 +14,14 @@ typedef struct Employee
 int main() {
     //EMP e[depts][noEmps];
     EMP** e = nullptr;
-
-    e = (EMP**)malloc(depts * sizeof(EMP*));
+    e = new EMP * [depts];
+   // e = (EMP**)malloc(depts * sizeof(EMP*));
     cout << "Address of e = " << (unsigned long int)e << endl;
 
     for (int i = 0;i < depts;i++)
     {
-        e[i] = (EMP*)malloc(noEmps * sizeof(EMP));
+      //  e[i] = (EMP*)malloc(noEmps * sizeof(EMP));
+        e[i] = new EMP[noEMPS];
         cout << "Address of e[" << i << "] = " << (unsigned long int)e[i] << endl;
 
     }
