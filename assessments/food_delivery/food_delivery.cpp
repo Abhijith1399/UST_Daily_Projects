@@ -13,6 +13,9 @@ public:
 
 	Deliverytip(int oid,int amt,int km)
 	{
+		cin >> oid;
+		cin >> amt;
+		cin >> km;
 
 	}
 
@@ -29,29 +32,29 @@ public:
 
 
 };
-void  Deliverytip::setorderid(int)
+void  Deliverytip::setorderid(int oid)
 {
-
+	orderid = oid;
 }
 int  Deliverytip::getorderid()
 {
-
+	return orderid;
 }
-void Deliverytip::setbillamnt(int)
+void Deliverytip::setbillamnt(int bt)
 {
-
+	billamnt = bt;
 }
 int  Deliverytip::getbillamnt()
 {
-
+	return billamnt;
 }
-void Deliverytip::setkilometer(float)
+void Deliverytip::setkilometer(float km)
 {
-
+	kilometer = km;
 }
 float Deliverytip::getkilometer()
 {
-
+	return kilometer;
 }
 void Deliverytip::settip(int)
 {
