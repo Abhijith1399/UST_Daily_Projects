@@ -16,7 +16,7 @@ int enqueue(int n)
 	if (rear == max)
 	{
 		cout << "queue is full" << endl;
-		return;
+		return 0;
 	}
 	arr[rear] = n;
 	rear++;
@@ -30,7 +30,7 @@ int dequeue()
 		cout << "queue is empty\n";
 		rear = 0;
 		front = 0;
-		return;
+		return 0;
 	}
 	cout << arr[front] << "got deque" << endl;
 	front++;
@@ -44,9 +44,9 @@ void display()
 	{
 		cout << "queue is empty\n";
 	}
-	for (int i = front;i >= max;i++)
+	for (int i = front;i <rear;i++)
 	{
-		cout << arr[i];
+		cout << arr[i]<<" ";
 	}
 	cout << endl;
 
@@ -59,6 +59,8 @@ int main()
 	enqueue(10);
 	enqueue(10);
 	enqueue(10);
+	display();
+	dequeue();
 	display();
 	return 0;
 }
