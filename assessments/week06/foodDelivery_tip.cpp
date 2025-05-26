@@ -11,12 +11,12 @@ private:
 	int tip;
 public:
 
-	Deliverytip(int oid,int amt,int km)
+	Deliverytip(int oid, int amt, float km)
 	{
-		cin >> oid;
-		cin >> amt;
-		cin >> km;
-
+		orderid = oid;
+		billamnt = amt;
+		kilometer = km;	
+		tip = 0;
 	}
 
 	void setorderid(int);
@@ -27,7 +27,7 @@ public:
 	float getkilometer();
 	void settip(int);
 	int getip();
-	int calculatecount();
+	int calculatetip(float,int);
 	void printDetails();
 
 
@@ -56,29 +56,44 @@ float Deliverytip::getkilometer()
 {
 	return kilometer;
 }
-void Deliverytip::settip(int)
+void Deliverytip::settip(int t)
 {
-
+	tip = t;
 }
 int Deliverytip::getip()
 {
-
+	return tip;
 }
-int Deliverytip::calculatecount()
+int Deliverytip::calculatetip(float km,int amt )
 {
+	if (km <= 5)
+	{
+		tip = 5 * amt / 100;
+	}
+	 else if (km >= 5 && km <= 10)
+	{
+		tip = 10 * amt / 100;
+	}
+	 else	if (km > 15)
+	{
+		tip = 15 * amt / 100;
+	}
+	//cout << tip;
+	return tip;
 
 }
 void Deliverytip::printDetails()
 {
-
+	cout << orderid << "order id" << endl;
+	cout << calculatetip(kilometer,billamnt)<<"tip";
 }
 
 
 
 int main()
 {
-	Deliverytip obj(0,0,0);
-
+	Deliverytip obj(100, 500, 8);
+	obj.printDetails();
 
 
 }
