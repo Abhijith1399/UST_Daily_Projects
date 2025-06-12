@@ -8,7 +8,7 @@ void Instruction::Add(map<string, vector<int>>& Reg_Value,
 	map<int, vector<string>>& Adress_Reg ,string type,string type1)
 {
 	type+= type1;
-	cout << "ADD " << type << ", " << type1<<endl;
+	cout << "AX " <<type<<endl;
 }
 
 void Instruction::Sub(map<string, vector<int>>& Reg_Value,
