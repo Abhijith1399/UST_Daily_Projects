@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{415d2b26-fda9-4bdc-8c38-d7b15b81004c}</ProjectGuid>
-    <RootNamespace>week09</RootNamespace>
+    <ProjectGuid>{b377499a-58c8-42c8-b9a3-86e8581ddd1e}</ProjectGuid>
+    <RootNamespace>Projectday50</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -71,7 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ExecutablePath>C:\Users\Administrator\Desktop\Ust_Daily_Project\assessments\week09\inc;$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <IncludePath>C:\Users\Administrator\Desktop\Ust_Daily_Project\Class_daily\Project_day50\header;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -107,7 +108,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Administrator\Desktop\Ust_Daily_Project\assessments\week09\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,18 +131,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="inc\Cdr.h" />
-    <ClInclude Include="inc\User.h" />
+    <ClInclude Include="header\Admin.h" />
+    <ClInclude Include="header\developer.h" />
+    <ClInclude Include="header\user.h" />
+    <ClInclude Include="header\employe.h" />
+    <ClInclude Include="header\manager.h" />
+    <ClInclude Include="header\person.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cdr.cpp" />
-    <ClCompile Include="cdr2.cpp" />
+    <ClCompile Include="admin.cpp" />
+    <ClCompile Include="admin1.cpp" />
+    <ClCompile Include="admin2.cpp" />
+    <ClCompile Include="developer.cpp" />
+    <ClCompile Include="employe.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="User.cpp" />
+    <ClCompile Include="manager.cpp" />
+    <ClCompile Include="user.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="cdr.txt" />
-    <Text Include="username.txt" />
+    <Text Include="details.txt" />
+    <Text Include="uid_pass.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
