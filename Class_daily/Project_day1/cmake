@@ -1,16 +1,219 @@
+(No subject)
+
+
+Abhijith Jose(UST,IN)
 ​
+Ebi Shima Paul(UST,IN)​
+Great, Abhi! Based on your Visual Studio solution structure for the My_Calculator project, here’s the complete C++ modular calculator code, including:
+
+Operations (Add, Subtract, Multiply, Divide)
+
+Calculator class
+
+main.cpp
+
+Unit test (CalculatorTest.cpp)
+
+CMakeLists.txt
+
+
+
+---
+
+📁 inc/Calculator.h
+
+#pragma once
+
+class Calculator {
+public:
+    double add(double a, double b);
+    double subtract(double a, double b);
+    double multiply(double a, double b);
+    double divide(double a, double b);
+};
+
+
+---
+
+📁 src/Calculator.cpp
+
+#include "Calculator.h"
+#include "AddOperation.h"
+#include "SubtractOperation.h"
+#include "MultiplyOperation.h"
+#include "DivideOperation.h"
+
+double Calculator::add(double a, double b) {
+    return AddOperation::execute(a, b);
+}
+
+double Calculator::subtract(double a, double b) {
+    return SubtractOperation::execute(a, b);
+}
+
+double Calculator::multiply(double a, double b) {
+    return MultiplyOperation::execute(a, b);
+}
+
+double Calculator::divide(double a, double b) {
+    return DivideOperation::execute(a, b);
+}
+
+
+---
+
+✅ Add Operation
+
+📁 inc/AddOperation.h
+
+#pragma once
+
+class AddOperation {
+public:
+    static double execute(double a, double b);
+};
+
+📁 src/AddOperation.cpp
+
+#include "AddOperation.h"
+
+double AddOperation::execute(double a, double b) {
+    return a + b;
+}
+
+
+---
+
+➖ Subtract Operation
+
+📁 inc/SubtractOperation.h
+
+#pragma once
+
+class SubtractOperation {
+public:
+    static double execute(double a, double b);
+};
+
+📁 src/SubtractOperation.cpp
+
+#include "SubtractOperation.h"
+
+double SubtractOperation::execute(double a, double b) {
+    return a - b;
+}
+
+
+---
+
+✖ Multiply Operation
+
+📁 inc/MultiplyOperation.h
+
+#pragma once
+
+class MultiplyOperation {
+public:
+    static double execute(double a, double b);
+};
+
+📁 src/MultiplyOperation.cpp
+
+#include "MultiplyOperation.h"
+
+double MultiplyOperation::execute(double a, double b) {
+    return a * b;
+}
+
+
+---
+
+➗ Divide Operation
+
+📁 inc/DivideOperation.h
+
+#pragma once
+
+class DivideOperation {
+public:
+    static double execute(double a, double b);
+};
+
+📁 src/DivideOperation.cpp
+
+#include "DivideOperation.h"
+#include <stdexcept>
+
+double DivideOperation::execute(double a, double b) {
+    if (b == 0.0)
+        throw std::runtime_error("Division by zero");
+    return a / b;
+}
+
+
+---
+
+🚀 src/main.cpp
+
+#include <iostream>
+#include "Calculator.h"
+
+int main() {
+    Calculator calc;
+    double a = 10, b = 5;
+
+    std::cout << "Add: " << calc.add(a, b) << "\n";
+    std::cout << "Subtract: " << calc.subtract(a, b) << "\n";
+    std::cout << "Multiply: " << calc.multiply(a, b) << "\n";
+
+    try {
+        std::cout << "Divide: " << calc.divide(a, b) << "\n";
+    } catch (std::exception& ex) {
+        std::cout << "Error: " << ex.what() << "\n";
+    }
+
+    return 0;
+}
+
+
+---
+
+🧪 test/CalculatorTest.cpp
+
+#include "../inc/Calculator.h"
+#include <cassert>
+
+int main() {
+    Calculator calc;
+
+    assert(calc.add(4, 5) == 9);
+    assert(calc.subtract(10, 3) == 7);
+    assert(calc.multiply(3, 4) == 12);
+    assert(calc.divide(20, 4) == 5);
+
+    try {
+        calc.divide(5, 0);
+        assert(false); // Should not reach here
+    } catch (...) {
+        assert(true); // Expected
+    }
+
+    return 0;
+}
+
+
+---
+
+⚙️ CMakeLists.txt
+
 cmake_minimum_required(VERSION 3.10)
 project(My_Calculator)
 
-# Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Include header files
 include_directories(inc)
 
-# Source files
-set(SOURCES
+add_executable(My_Calculator
     src/main.cpp
     src/Calculator.cpp
     src/AddOperation.cpp
@@ -19,5 +222,27 @@ set(SOURCES
     src/DivideOperation.cpp
 )
 
-# Create the executable
-add_executable(My_Calculator ${SOURCES})
+add_executable(CalculatorTest
+    test/CalculatorTest.cpp
+    src/Calculator.cpp
+    src/AddOperation.cpp
+    src/SubtractOperation.cpp
+    src/MultiplyOperation.cpp
+    src/DivideOperation.cpp
+)
+
+
+---
+
+Would you also like:
+
+✅ A .github/workflows/ci.yml to run this on GitHub Actions?
+
+✅ Add doctest or gtest framework instead of assert?
+
+
+Let me know, and I can include them next.
+
+
+
+Get Outlook for Android
