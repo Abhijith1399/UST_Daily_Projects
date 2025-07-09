@@ -1,0 +1,23 @@
+​
+cmake_minimum_required(VERSION 3.10)
+project(My_Calculator)
+
+# Set C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# Include header files
+include_directories(inc)
+
+# Source files
+set(SOURCES
+    src/main.cpp
+    src/Calculator.cpp
+    src/AddOperation.cpp
+    src/SubtractOperation.cpp
+    src/MultiplyOperation.cpp
+    src/DivideOperation.cpp
+)
+
+# Create the executable
+add_executable(My_Calculator ${SOURCES})
